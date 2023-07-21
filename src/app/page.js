@@ -4,6 +4,7 @@ import {useEffect} from 'react'
 import styles from './page.module.css'
 import Intro from '../components/intro'
 import Description from '../components/Description'
+import Projects from '../components/Projects'
 export default function Home() {
 
 
@@ -19,6 +20,8 @@ export default function Home() {
   return (
    <main className={styles.main}>
     <Intro  />
+    <Description  />
+    <Projects  />
    
    </main>
   )

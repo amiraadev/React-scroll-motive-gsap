@@ -1,38 +1,13 @@
-.backgroundImage{
-    position:absolute;
-    height: 140vh;
-    width:100%;
-    top:0;
-    filter: brightness(60%);
-}
 
-.backgroundImage img{ 
-  object-fit:cover;
-}
-
-.introContainer{
-    margin-top: 35vh;
-    display: flex;
-    align-items: center;
-}
-.introContainer h1{
-    z-index: 3;
+.description{
+    position: relative;
     color: white;
-    font-size: 7vw;
-    margin-top: 35vh;
+    font-size: 3vw;
     text-transform: uppercase;
+    margin-top: 30vw;
+    margin-left: 10vw;
 }
-
-.introImage {
-    position:relative;
-    height: 350px;
-    width:475px;
-    filter: brightness(70%);
-
-}
-.introImage img{
-    object-fit: cover;
-    object-position: top;
-   
-
+.description p{
+    margin: 0px;
+    position: relative;
 }
