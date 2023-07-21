@@ -1,25 +1,25 @@
 import React, { useState, useLayoutEffect, useRef } from 'react'
-import styles from './style.module.css';
+import styles from './styles.module.css';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const projects = [
     {
-        title: "Salar de Atacama",
-        src: "image3.jpg"
+        title: "Djerba",
+        src: "image20.jpg"
     },
     {
-        title: "Valle de la luna",
-        src: "image4.jpeg"
+        title: "Hammamet",
+        src: "image12.jpg"
     },
     {
-        title: "Miscanti Lake",
-        src: "image5.jpeg"
+        title: "Nabeul",
+        src: "image24.jpg"
     },
     {
-        title: "Miniques Lagoons",
-        src: "image6.jpg"
+        title: "Sousse",
+        src: "image23.jpg"
     },
 ]
 
@@ -37,6 +37,8 @@ export default function Index() {
             start: "top-=100px",
             end: document.body.offsetHeight - window.innerHeight - 50,
         })
+
+        console.log(`/images/${projects[selectedProject].src}`);
     }, [])
 
     return (
@@ -51,10 +53,11 @@ export default function Index() {
                     />
                 </div>
                 <div className={styles.column}>
-                    <p>The flora is characterized by the presence of high elevation wetland, as well as yellow straw, broom sedge, tola de agua and tola amaia.</p>
+                    <p >Djerba, a pearl in the Mediterranean, enchants with its pristine beaches and tranquil charm. Its golden sunsets and ancient allure make it a haven for seekers of beauty and serenity.</p>
                 </div>
                 <div className={styles.column}>
-                    <p>Some, like the southern viscacha, vicuña and Darwins rhea, are classified as endangered species. Others, such as Andean goose, horned coot, Andean gull, puna tinamou and the three flamingo species inhabiting in Chile (Andean flamingo, Chilean flamingo, and Jamess flamingo) are considered vulnerable.</p>
+                    <p>
+Bizerte, a coastal gem nestled by azure waters, captivates with its historic charm. Explore its winding alleys, azure bay, and rich heritage, and immerse yourself in a world of beauty and culture.</p>
                 </div>
             </div>
 

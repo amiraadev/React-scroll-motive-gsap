@@ -1,49 +1,40 @@
-import React, { useLayoutEffect ,useRef } from 'react'
-import styles from './styles.module.css'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
+import React, { useLayoutEffect, useRef } from 'react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import styles from './styles.module.css';
 
-const index = () => {
-    const phrases = ["Timeless echoes, ancient Carthage, Tunis","Azure coast, dreams awaken, Hammamet","Spice-filled souks, hearts enchanted, Bizerte","Desert's dance, nature's symphony, Djerba"]
-   
+const phrases = ["Discover Tunisia's allure:", "Rich history, azure coast,", "vibrant souks, and desert wonders"]
 
-   
-   
-    return (
-    <div className={styles.description}>
+export default function Index() {
+
+  return (
+    <div className={styles.description} >
         {
-            phrases.map((phrase,index) => {
-                return(<AnimatedText key={index}>{phrase} </AnimatedText>)
-
-
+            phrases.map( (phrase, index) => {
+                return <AnimatedText key={index}>{phrase}</AnimatedText>
             })
         }
     </div>
   )
 }
 
-
 function AnimatedText({children}) {
-    const text = useRef(null)
-    useLayoutEffect(() => {
-            gsap.registerPlugin(ScrollTrigger);
-          
-            gsap.from(text.current,{
-                scrollTrigger:{
-                    trigger:text.current,
-                    start:"0px bottom",
-                    end:"bottom+=400px bottom",
-                    scrub:true,
-                },
-                left:"-200px",
-                opacity:0
-            }
-            )
-        }, [])
-   
-    return(
-        <p ref={text}>{children}</p>
-    )
-    
+    const text = useRef(null);
+
+    useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=400px bottom",
+            },
+            opacity: 0,
+            left: "-200px",
+            ease: "power3.Out"
+        })
+    }, [])
+
+    return <p ref={text}>{children}</p>
 }
-export default index
